@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16C32f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Clothes" representedClassName="Clothes" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" attributeType="String" syncable="YES"/>
+        <attribute name="owner" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoFullURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="season" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Owners" representedClassName="Owners" syncable="YES" codeGenerationType="class">
+        <attribute name="ownerAge" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ownerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ownerSex" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Seasons" representedClassName="Seasons" syncable="YES" codeGenerationType="class">
+        <attribute name="nameOfSeason" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Clothes" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Seasons" positionX="-63" positionY="27" width="128" height="60"/>
+        <element name="Owners" positionX="-54" positionY="36" width="128" height="90"/>
+    </elements>
 </model>
