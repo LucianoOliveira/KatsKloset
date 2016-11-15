@@ -1,26 +1,22 @@
 //
-//  EditViewController.swift
+//  EditOwnerViewController.swift
 //  KatsKloset
 //
-//  Created by Luciano Oliveira on 07/11/2016.
+//  Created by Luciano Oliveira on 15/11/2016.
 //  Copyright © 2016 Luciano Oliveira. All rights reserved.
 //
 
 import UIKit
 
-class EditViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    @IBOutlet weak var descText: UITextField!
-    @IBOutlet weak var ownerText: UITextField!
-    @IBOutlet weak var colorText: UITextField!
-    @IBOutlet weak var sizeText: UITextField!
-    @IBOutlet weak var seasonText: UITextField!
-    @IBOutlet weak var showImage: UIImageView!
-    @IBOutlet weak var typeText: UITextField!
+class EditOwnerViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var photoFullURL: String!
+    var items : [Owners] = []
+    var ownerPhotoFullURL: String!
 
-    var items : [Clothes] = []
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var ageText: UITextField!
+    @IBOutlet weak var sexSwitch: UISegmentedControl!
+    @IBOutlet weak var showImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,38 +24,36 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         // Dismiss keyboard when tapped outsinde the keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddItemViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        self.photoFullURL=nil
+        self.ownerPhotoFullURL=nil
         
         
         // Do any additional setup after loading the view.
-        descText.text = items[0].desc
-        ownerText.text = items[0].owner
-        colorText.text = items[0].color
-        sizeText.text = items[0].size
-        seasonText.text = items[0].season
-        typeText.text = items[0].tipo
-        if items[0].photoFullURL == nil {
+        nameText.text = items[0].ownerName
+        ageText.text = String(items[0].ownerAge)
+        
+        if (items[0].ownerSex)=="Masculino"{
+            sexSwitch.selectedSegmentIndex=0
+        }
+        else{
+            sexSwitch.selectedSegmentIndex=1
+        }
+        if items[0].ownerPhotoFullURL == nil {
             showImage.image = #imageLiteral(resourceName: "no_image_available_10")
             let URL = NSURL(fileURLWithPath: "no_image_available_10").absoluteString!
-            self.photoFullURL = URL
+            self.ownerPhotoFullURL = URL
         }
         else{
             let paths: NSArray = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
             let documentsDir: NSString = paths.object(at: 0) as! NSString
             
-            let path: NSString = documentsDir.appending(items[0].photoFullURL!) as NSString
+            let path: NSString = documentsDir.appending(items[0].ownerPhotoFullURL!) as NSString
             showImage.image = UIImage(contentsOfFile: path as String)
-            self.photoFullURL=items[0].photoFullURL
+            self.ownerPhotoFullURL=items[0].ownerPhotoFullURL
         }
-
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
     }
 
-   
     @IBAction func saveItem(_ sender: Any) {
+    
         
         //Get context of core data
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -72,32 +66,38 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
         
         //Create new object of type entity in the core data
-        let item = Clothes(context: context)
+        let item = Owners(context: context)
         //fill every atribute of the new object
-        item.desc = descText.text!
-        item.owner = ownerText.text!
-        item.color = colorText.text!
-        item.size = sizeText.text!
-        item.season = seasonText.text!
-        item.tipo = typeText.text!
-        if (self.photoFullURL==nil) {
+        item.ownerName = nameText.text!
+        item.ownerAge = Int16(ageText.text!)!
+        
+        switch sexSwitch.selectedSegmentIndex {
+        case 0:
+            item.ownerSex="Masculino"
+        case 1:
+            item.ownerSex="Feminino"
+        default:
+            item.ownerSex=""
+        }
+        if (self.ownerPhotoFullURL==nil) {
             let URL = NSURL(fileURLWithPath: "no_image_available_10").absoluteString!
-            item.photoFullURL = URL
+            item.ownerPhotoFullURL = URL
         }
         else{
-            item.photoFullURL = self.photoFullURL
+            item.ownerPhotoFullURL = self.ownerPhotoFullURL
         }
+
         
         //save new data object in core data
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
-        self.photoFullURL=nil
-
+        self.ownerPhotoFullURL=nil
+        
         
         //After saving data return to previous screen
         navigationController!.popViewController(animated: true)
     }
-
+    
     
     func dismissKeyboard(){
         view.endEditing(true)
@@ -111,6 +111,7 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         picker.allowsEditing = false
         self.present(picker, animated: true, completion: nil)
     }
+    
     
     
     //UIImagePickerControllerDelegate
@@ -131,11 +132,11 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let theDate: NSString = dateFormat.string(from: now) as NSString
         
         //Set URL for the photo
-        self.photoFullURL = NSString(format: "/%@.png", theDate) as String!
-        items[0].photoFullURL=self.photoFullURL
+        self.ownerPhotoFullURL = NSString(format: "/%@.png", theDate) as String!
+        items[0].ownerPhotoFullURL=self.ownerPhotoFullURL
         
         //Save the image
-        let pathFull: NSString = documentsDir.appending(self.photoFullURL) as NSString
+        let pathFull: NSString = documentsDir.appending(self.ownerPhotoFullURL) as NSString
         let pngFullData: NSData = UIImagePNGRepresentation(newImage) as NSData!
         pngFullData.write(toFile: pathFull as String, atomically: true)
         
@@ -163,5 +164,4 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
 
-    
 }

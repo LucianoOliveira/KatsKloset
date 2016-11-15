@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		921934561DDA1CBA0041EADD /* AddOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */; };
+		921934591DDB30B80041EADD /* StandardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921934571DDB30B80041EADD /* StandardTableViewCell.swift */; };
+		9219345A1DDB30B80041EADD /* StandardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921934581DDB30B80041EADD /* StandardTableViewCell.xib */; };
+		9219345C1DDB54850041EADD /* EditOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219345B1DDB54850041EADD /* EditOwnerViewController.swift */; };
 		9228F3971DCBFCAD001D7318 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9228F3961DCBFCAD001D7318 /* AddItemViewController.swift */; };
 		9230E0BC1DCB6C8800C51199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0BB1DCB6C8800C51199 /* AppDelegate.swift */; };
 		9230E0BE1DCB6C8800C51199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0BD1DCB6C8800C51199 /* ViewController.swift */; };
@@ -18,6 +22,7 @@
 		9230E0DF1DCB6C8800C51199 /* KatsKlosetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0DE1DCB6C8800C51199 /* KatsKlosetUITests.swift */; };
 		9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236D6731DCE460E000622D6 /* TableViewCell1.swift */; };
 		9236D6761DCE460E000622D6 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9236D6741DCE460E000622D6 /* TableViewCell1.xib */; };
+		928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */; };
 		92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A24EF11DD0D92200494FC7 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOwnerViewController.swift; sourceTree = "<group>"; };
+		921934571DDB30B80041EADD /* StandardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardTableViewCell.swift; sourceTree = "<group>"; };
+		921934581DDB30B80041EADD /* StandardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StandardTableViewCell.xib; sourceTree = "<group>"; };
+		9219345B1DDB54850041EADD /* EditOwnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditOwnerViewController.swift; sourceTree = "<group>"; };
 		9228F3961DCBFCAD001D7318 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		9230E0B81DCB6C8800C51199 /* KatsKloset.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KatsKloset.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9230E0BB1DCB6C8800C51199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +65,7 @@
 		9230E0E01DCB6C8800C51199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9236D6731DCE460E000622D6 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
 		9236D6741DCE460E000622D6 /* TableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell1.xib; sourceTree = "<group>"; };
+		928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOwners.swift; sourceTree = "<group>"; };
 		92A24EF11DD0D92200494FC7 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,9 +121,14 @@
 				9230E0BD1DCB6C8800C51199 /* ViewController.swift */,
 				9228F3961DCBFCAD001D7318 /* AddItemViewController.swift */,
 				92A24EF11DD0D92200494FC7 /* EditViewController.swift */,
+				928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */,
+				921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */,
+				9219345B1DDB54850041EADD /* EditOwnerViewController.swift */,
 				9230E0BF1DCB6C8800C51199 /* Main.storyboard */,
 				9236D6731DCE460E000622D6 /* TableViewCell1.swift */,
 				9236D6741DCE460E000622D6 /* TableViewCell1.xib */,
+				921934571DDB30B80041EADD /* StandardTableViewCell.swift */,
+				921934581DDB30B80041EADD /* StandardTableViewCell.xib */,
 				9230E0C51DCB6C8800C51199 /* Assets.xcassets */,
 				9230E0C71DCB6C8800C51199 /* LaunchScreen.storyboard */,
 				9230E0CA1DCB6C8800C51199 /* Info.plist */,
@@ -250,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9219345A1DDB30B80041EADD /* StandardTableViewCell.xib in Resources */,
 				9230E0C91DCB6C8800C51199 /* LaunchScreen.storyboard in Resources */,
 				9230E0C61DCB6C8800C51199 /* Assets.xcassets in Resources */,
 				9230E0C11DCB6C8800C51199 /* Main.storyboard in Resources */,
@@ -280,7 +296,11 @@
 			files = (
 				9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */,
 				9230E0C41DCB6C8800C51199 /* KatsKloset.xcdatamodeld in Sources */,
+				9219345C1DDB54850041EADD /* EditOwnerViewController.swift in Sources */,
+				921934561DDA1CBA0041EADD /* AddOwnerViewController.swift in Sources */,
+				928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */,
 				92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */,
+				921934591DDB30B80041EADD /* StandardTableViewCell.swift in Sources */,
 				9228F3971DCBFCAD001D7318 /* AddItemViewController.swift in Sources */,
 				9230E0BE1DCB6C8800C51199 /* ViewController.swift in Sources */,
 				9230E0BC1DCB6C8800C51199 /* AppDelegate.swift in Sources */,

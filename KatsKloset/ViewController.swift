@@ -38,14 +38,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("TableViewCell1", owner: self, options: nil)?.first as! TableViewCell1
+        let cell = Bundle.main.loadNibNamed("StandardTableViewCell", owner: self, options: nil)?.first as! StandardTableViewCell
         
         let item = items[indexPath.row]
         
-        cell.descriptionCell.text = item.desc
-        cell.colorCell.text = item.color
-        cell.ownerCell.text = item.owner
-        //cell.imageCell.image = something
+        //cell.titleCell.text = item.desc
+        cell.titleCell.text = item.desc
+        cell.subtitle1Cell.text = item.color
+        cell.subtitle2Cell.text = item.owner
         if item.photoFullURL == nil {
             cell.imageCell.image = #imageLiteral(resourceName: "no_image_available_10")
         }
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
+        return 50
     }
     
     func getData(){
