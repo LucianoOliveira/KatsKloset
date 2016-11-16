@@ -22,6 +22,10 @@
 		9230E0DF1DCB6C8800C51199 /* KatsKlosetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0DE1DCB6C8800C51199 /* KatsKlosetUITests.swift */; };
 		9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9236D6731DCE460E000622D6 /* TableViewCell1.swift */; };
 		9236D6761DCE460E000622D6 /* TableViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9236D6741DCE460E000622D6 /* TableViewCell1.xib */; };
+		9250553E1DDCA72900CA6E89 /* ViewControllerSeasons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250553D1DDCA72900CA6E89 /* ViewControllerSeasons.swift */; };
+		925055401DDCA8B100CA6E89 /* AddSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */; };
+		925055421DDCAE9D00CA6E89 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */; };
+		925055441DDCAF3200CA6E89 /* AddTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */; };
 		928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */; };
 		92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A24EF11DD0D92200494FC7 /* EditViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +69,10 @@
 		9230E0E01DCB6C8800C51199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9236D6731DCE460E000622D6 /* TableViewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell1.swift; sourceTree = "<group>"; };
 		9236D6741DCE460E000622D6 /* TableViewCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell1.xib; sourceTree = "<group>"; };
+		9250553D1DDCA72900CA6E89 /* ViewControllerSeasons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerSeasons.swift; sourceTree = "<group>"; };
+		9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSeasonViewController.swift; sourceTree = "<group>"; };
+		925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
+		925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTypeViewController.swift; sourceTree = "<group>"; };
 		928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOwners.swift; sourceTree = "<group>"; };
 		92A24EF11DD0D92200494FC7 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +132,10 @@
 				928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */,
 				921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */,
 				9219345B1DDB54850041EADD /* EditOwnerViewController.swift */,
+				9250553D1DDCA72900CA6E89 /* ViewControllerSeasons.swift */,
+				9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */,
+				925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */,
+				925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */,
 				9230E0BF1DCB6C8800C51199 /* Main.storyboard */,
 				9236D6731DCE460E000622D6 /* TableViewCell1.swift */,
 				9236D6741DCE460E000622D6 /* TableViewCell1.xib */,
@@ -294,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925055441DDCAF3200CA6E89 /* AddTypeViewController.swift in Sources */,
 				9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */,
 				9230E0C41DCB6C8800C51199 /* KatsKloset.xcdatamodeld in Sources */,
 				9219345C1DDB54850041EADD /* EditOwnerViewController.swift in Sources */,
@@ -303,7 +316,10 @@
 				921934591DDB30B80041EADD /* StandardTableViewCell.swift in Sources */,
 				9228F3971DCBFCAD001D7318 /* AddItemViewController.swift in Sources */,
 				9230E0BE1DCB6C8800C51199 /* ViewController.swift in Sources */,
+				925055401DDCA8B100CA6E89 /* AddSeasonViewController.swift in Sources */,
 				9230E0BC1DCB6C8800C51199 /* AppDelegate.swift in Sources */,
+				9250553E1DDCA72900CA6E89 /* ViewControllerSeasons.swift in Sources */,
+				925055421DDCAE9D00CA6E89 /* ViewControllerType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
