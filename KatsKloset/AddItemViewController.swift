@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var descText: UITextField!
     @IBOutlet weak var ownerText: UITextField!
@@ -19,16 +19,45 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var typeText: UITextField!
     
     var photoFullURL: String!
+    var pickerOwner = UIPickerView()
+    var pickerSeason = UIPickerView()
+    var pickerType = UIPickerView()
+    
+    //PickerView Owners
+    var owners : [Owners] = []
+    //PickerView Seasons
+    var seasons: [Seasons] = []
+    //PickerView Type
+    var typeOfClothes : [TypesOfClothes] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Pickers
+        pickerOwner.delegate=self
+        pickerOwner.dataSource=self
+        pickerOwner.tag=0
+        pickerSeason.delegate=self
+        pickerSeason.dataSource=self
+        pickerSeason.tag=1
+        pickerType.delegate=self
+        pickerType.dataSource=self
+        pickerType.tag=2
+        
+        //Connect PickerView to TextField
+        ownerText.inputView = pickerOwner
+        seasonText.inputView = pickerSeason
+        typeText.inputView = pickerType
+        
         // Do any additional setup after loading the view.
         self.photoFullURL=nil
         
         // Dismiss keyboard when tapped outsinde the keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddItemViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        //get the data from core data
+        getData()
 
     }
     
@@ -130,6 +159,79 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         return newImage
     
+    }
+    
+    
+    //PickerView Methods
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView.tag==0{
+            return owners.count
+        }
+        if pickerView.tag==1{
+            return seasons.count
+        }
+        if pickerView.tag==2{
+            return typeOfClothes.count
+        }
+
+        return 0
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView.tag==0{
+            ownerText.text = owners[row].ownerName
+        }
+        if pickerView.tag==1{
+            seasonText.text = seasons[row].nameOfSeason
+        }
+        if pickerView.tag==2{
+            typeText.text = typeOfClothes[row].nameOfType
+        }
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if pickerView.tag==0{
+            return owners[row].ownerName
+        }
+        if pickerView.tag==1{
+            return seasons[row].nameOfSeason
+        }
+        if pickerView.tag==2{
+            return typeOfClothes[row].nameOfType
+        }
+        return ""
+    }
+    
+    
+    
+    
+    //Load data for picker views
+    func getData(){
+        //Get context of core data
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        //fill array owners
+        do {
+            try owners = context.fetch(Owners.fetchRequest())
+        } catch  {
+            print("Error while catching from CoreData")
+        }
+        //fill array seasons
+        do {
+            try seasons = context.fetch(Seasons.fetchRequest())
+        } catch  {
+            print("Error while catching from CoreData")
+        }
+        //fill array seasons
+        do {
+            try typeOfClothes = context.fetch(TypesOfClothes.fetchRequest())
+        } catch  {
+            print("Error while catching from CoreData")
+        }
+        
     }
 
 }
