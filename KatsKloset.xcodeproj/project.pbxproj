@@ -16,7 +16,6 @@
 		9230E0BE1DCB6C8800C51199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0BD1DCB6C8800C51199 /* ViewController.swift */; };
 		9230E0C11DCB6C8800C51199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9230E0BF1DCB6C8800C51199 /* Main.storyboard */; };
 		9230E0C41DCB6C8800C51199 /* KatsKloset.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0C21DCB6C8800C51199 /* KatsKloset.xcdatamodeld */; };
-		9230E0C61DCB6C8800C51199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9230E0C51DCB6C8800C51199 /* Assets.xcassets */; };
 		9230E0C91DCB6C8800C51199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9230E0C71DCB6C8800C51199 /* LaunchScreen.storyboard */; };
 		9230E0D41DCB6C8800C51199 /* KatsKlosetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0D31DCB6C8800C51199 /* KatsKlosetTests.swift */; };
 		9230E0DF1DCB6C8800C51199 /* KatsKlosetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9230E0DE1DCB6C8800C51199 /* KatsKlosetUITests.swift */; };
@@ -26,8 +25,13 @@
 		925055401DDCA8B100CA6E89 /* AddSeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */; };
 		925055421DDCAE9D00CA6E89 /* ViewControllerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */; };
 		925055441DDCAF3200CA6E89 /* AddTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */; };
+		927CCB7E1DE09DDB0049789D /* ViewAllController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CCB7D1DE09DDB0049789D /* ViewAllController.swift */; };
+		927CCB821DE329440049789D /* ViewWardrobeOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CCB811DE329440049789D /* ViewWardrobeOwners.swift */; };
+		927CCB841DE352640049789D /* ViewWardrobeByOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927CCB831DE352640049789D /* ViewWardrobeByOwner.swift */; };
 		928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */; };
+		9291B15E1DDF589700DAFF3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9291B15D1DDF589700DAFF3A /* Assets.xcassets */; };
 		92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A24EF11DD0D92200494FC7 /* EditViewController.swift */; };
+		92C727D61DE4FE4900A0AA1E /* ViewClothesOfOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +62,6 @@
 		9230E0BD1DCB6C8800C51199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9230E0C01DCB6C8800C51199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9230E0C31DCB6C8800C51199 /* KatsKloset.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KatsKloset.xcdatamodel; sourceTree = "<group>"; };
-		9230E0C51DCB6C8800C51199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9230E0C81DCB6C8800C51199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9230E0CA1DCB6C8800C51199 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9230E0CF1DCB6C8800C51199 /* KatsKlosetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatsKlosetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,8 +76,13 @@
 		9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSeasonViewController.swift; sourceTree = "<group>"; };
 		925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerType.swift; sourceTree = "<group>"; };
 		925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTypeViewController.swift; sourceTree = "<group>"; };
+		927CCB7D1DE09DDB0049789D /* ViewAllController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAllController.swift; sourceTree = "<group>"; };
+		927CCB811DE329440049789D /* ViewWardrobeOwners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWardrobeOwners.swift; sourceTree = "<group>"; };
+		927CCB831DE352640049789D /* ViewWardrobeByOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWardrobeByOwner.swift; sourceTree = "<group>"; };
 		928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOwners.swift; sourceTree = "<group>"; };
+		9291B15D1DDF589700DAFF3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A24EF11DD0D92200494FC7 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClothesOfOwner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92288A7E1DE5E5CC00AE1438 /* Wardrobe By Owner */ = {
+			isa = PBXGroup;
+			children = (
+				927CCB7D1DE09DDB0049789D /* ViewAllController.swift */,
+				927CCB811DE329440049789D /* ViewWardrobeOwners.swift */,
+				927CCB831DE352640049789D /* ViewWardrobeByOwner.swift */,
+				92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */,
+			);
+			name = "Wardrobe By Owner";
+			sourceTree = "<group>";
+		};
 		9230E0AF1DCB6C8700C51199 = {
 			isa = PBXGroup;
 			children = (
@@ -126,22 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				9230E0BB1DCB6C8800C51199 /* AppDelegate.swift */,
-				9230E0BD1DCB6C8800C51199 /* ViewController.swift */,
-				9228F3961DCBFCAD001D7318 /* AddItemViewController.swift */,
-				92A24EF11DD0D92200494FC7 /* EditViewController.swift */,
-				928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */,
-				921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */,
-				9219345B1DDB54850041EADD /* EditOwnerViewController.swift */,
-				9250553D1DDCA72900CA6E89 /* ViewControllerSeasons.swift */,
-				9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */,
-				925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */,
-				925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */,
+				92288A7E1DE5E5CC00AE1438 /* Wardrobe By Owner */,
+				927CCB801DE3290B0049789D /* CRUD on settings */,
 				9230E0BF1DCB6C8800C51199 /* Main.storyboard */,
-				9236D6731DCE460E000622D6 /* TableViewCell1.swift */,
-				9236D6741DCE460E000622D6 /* TableViewCell1.xib */,
-				921934571DDB30B80041EADD /* StandardTableViewCell.swift */,
-				921934581DDB30B80041EADD /* StandardTableViewCell.xib */,
-				9230E0C51DCB6C8800C51199 /* Assets.xcassets */,
+				9291B15D1DDF589700DAFF3A /* Assets.xcassets */,
 				9230E0C71DCB6C8800C51199 /* LaunchScreen.storyboard */,
 				9230E0CA1DCB6C8800C51199 /* Info.plist */,
 				9230E0C21DCB6C8800C51199 /* KatsKloset.xcdatamodeld */,
@@ -165,6 +172,27 @@
 				9230E0E01DCB6C8800C51199 /* Info.plist */,
 			);
 			path = KatsKlosetUITests;
+			sourceTree = "<group>";
+		};
+		927CCB801DE3290B0049789D /* CRUD on settings */ = {
+			isa = PBXGroup;
+			children = (
+				9230E0BD1DCB6C8800C51199 /* ViewController.swift */,
+				9228F3961DCBFCAD001D7318 /* AddItemViewController.swift */,
+				92A24EF11DD0D92200494FC7 /* EditViewController.swift */,
+				928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */,
+				921934551DDA1CBA0041EADD /* AddOwnerViewController.swift */,
+				9219345B1DDB54850041EADD /* EditOwnerViewController.swift */,
+				9250553D1DDCA72900CA6E89 /* ViewControllerSeasons.swift */,
+				9250553F1DDCA8B100CA6E89 /* AddSeasonViewController.swift */,
+				925055411DDCAE9D00CA6E89 /* ViewControllerType.swift */,
+				925055431DDCAF3200CA6E89 /* AddTypeViewController.swift */,
+				9236D6731DCE460E000622D6 /* TableViewCell1.swift */,
+				9236D6741DCE460E000622D6 /* TableViewCell1.xib */,
+				921934571DDB30B80041EADD /* StandardTableViewCell.swift */,
+				921934581DDB30B80041EADD /* StandardTableViewCell.xib */,
+			);
+			name = "CRUD on settings";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,9 +307,9 @@
 			files = (
 				9219345A1DDB30B80041EADD /* StandardTableViewCell.xib in Resources */,
 				9230E0C91DCB6C8800C51199 /* LaunchScreen.storyboard in Resources */,
-				9230E0C61DCB6C8800C51199 /* Assets.xcassets in Resources */,
 				9230E0C11DCB6C8800C51199 /* Main.storyboard in Resources */,
 				9236D6761DCE460E000622D6 /* TableViewCell1.xib in Resources */,
+				9291B15E1DDF589700DAFF3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,16 +336,20 @@
 			files = (
 				925055441DDCAF3200CA6E89 /* AddTypeViewController.swift in Sources */,
 				9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */,
+				927CCB821DE329440049789D /* ViewWardrobeOwners.swift in Sources */,
 				9230E0C41DCB6C8800C51199 /* KatsKloset.xcdatamodeld in Sources */,
 				9219345C1DDB54850041EADD /* EditOwnerViewController.swift in Sources */,
 				921934561DDA1CBA0041EADD /* AddOwnerViewController.swift in Sources */,
+				927CCB7E1DE09DDB0049789D /* ViewAllController.swift in Sources */,
 				928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */,
+				92C727D61DE4FE4900A0AA1E /* ViewClothesOfOwner.swift in Sources */,
 				92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */,
 				921934591DDB30B80041EADD /* StandardTableViewCell.swift in Sources */,
 				9228F3971DCBFCAD001D7318 /* AddItemViewController.swift in Sources */,
 				9230E0BE1DCB6C8800C51199 /* ViewController.swift in Sources */,
 				925055401DDCA8B100CA6E89 /* AddSeasonViewController.swift in Sources */,
 				9230E0BC1DCB6C8800C51199 /* AppDelegate.swift in Sources */,
+				927CCB841DE352640049789D /* ViewWardrobeByOwner.swift in Sources */,
 				9250553E1DDCA72900CA6E89 /* ViewControllerSeasons.swift in Sources */,
 				925055421DDCAE9D00CA6E89 /* ViewControllerType.swift in Sources */,
 			);

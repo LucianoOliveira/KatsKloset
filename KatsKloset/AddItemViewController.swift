@@ -18,6 +18,8 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var showImage: UIImageView!
     @IBOutlet weak var typeText: UITextField!
     
+    @IBOutlet weak var titleNavItem: UINavigationItem!
+    
     var photoFullURL: String!
     var pickerOwner = UIPickerView()
     var pickerSeason = UIPickerView()
@@ -29,6 +31,12 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
     var seasons: [Seasons] = []
     //PickerView Type
     var typeOfClothes : [TypesOfClothes] = []
+    
+    
+    //Variables trasmited from previous step
+    var transOwner: String=""
+    var transSeason: String=""
+    var transType: String=""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +66,16 @@ class AddItemViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         //get the data from core data
         getData()
+        
+        if transOwner != "" {
+            ownerText.text = transOwner
+        }
+        if transSeason != "" {
+            seasonText.text = transSeason
+        }
+        if transType != "" {
+            typeText.text = transType
+        }
 
     }
     
