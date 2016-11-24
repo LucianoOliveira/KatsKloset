@@ -31,6 +31,7 @@
 		928C4AB31DD61205007B9789 /* ViewControllerOwners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */; };
 		9291B15E1DDF589700DAFF3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9291B15D1DDF589700DAFF3A /* Assets.xcassets */; };
 		92A24EF21DD0D92200494FC7 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A24EF11DD0D92200494FC7 /* EditViewController.swift */; };
+		92A6F8B91DE79E92007259EB /* ViewClothesOfSeason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A6F8B81DE79E92007259EB /* ViewClothesOfSeason.swift */; };
 		92C727D61DE4FE4900A0AA1E /* ViewClothesOfOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		928C4AB21DD61205007B9789 /* ViewControllerOwners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOwners.swift; sourceTree = "<group>"; };
 		9291B15D1DDF589700DAFF3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92A24EF11DD0D92200494FC7 /* EditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		92A6F8B81DE79E92007259EB /* ViewClothesOfSeason.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClothesOfSeason.swift; sourceTree = "<group>"; };
 		92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClothesOfOwner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				927CCB7D1DE09DDB0049789D /* ViewAllController.swift */,
 				927CCB811DE329440049789D /* ViewWardrobeOwners.swift */,
 				927CCB831DE352640049789D /* ViewWardrobeByOwner.swift */,
+				92A6F8B81DE79E92007259EB /* ViewClothesOfSeason.swift */,
 				92C727D51DE4FE4900A0AA1E /* ViewClothesOfOwner.swift */,
 			);
 			name = "Wardrobe By Owner";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A6F8B91DE79E92007259EB /* ViewClothesOfSeason.swift in Sources */,
 				925055441DDCAF3200CA6E89 /* AddTypeViewController.swift in Sources */,
 				9236D6751DCE460E000622D6 /* TableViewCell1.swift in Sources */,
 				927CCB821DE329440049789D /* ViewWardrobeOwners.swift in Sources */,

@@ -1,15 +1,20 @@
 //
-//  ViewWardrobeByOwner.swift
+//  ViewClothesOfSeason.swift
 //  KatsKloset
 //
-//  Created by Luciano Oliveira on 21/11/2016.
+//  Created by Luciano Oliveira on 24/11/2016.
 //  Copyright © 2016 Luciano Oliveira. All rights reserved.
 //
 
 import UIKit
 
-class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class ViewClothesOfSeason: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    //Values to be passed from segue
+    var owner: String = ""
+    var season: String = ""
+    var typeOfCloth: String = ""
+    var sectionName: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleNavItem: UINavigationItem!
@@ -24,9 +29,6 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         var sectionObject: [ObjectsInSection]!
     }
     var objectsArray = [Objects]()
-
-    
-    var items : [Owners] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,7 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         tableView.delegate = self
     }
 
+
     override func viewWillAppear(_ animated: Bool) {
         //get the data from core data
         getData()
@@ -44,12 +47,13 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         tableView.reloadData()
         
         //Title navitem
-        titleNavItem.title = items[0].ownerName!
+        titleNavItem.title = owner + " - " + season
+        
     }
     
     func getData() {
         //get Owner
-        let currentOwner = items[0].ownerName
+        let currentOwner = owner
         
         //Get Number of Clothes by Season
         var objInSec = [ObjectsInSection]()
@@ -59,14 +63,6 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         //Get context of core data
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        //fill array seasons with all the Seasons in core data
-        //Get seasons
-        var seasons: [Seasons]=[]
-        do {
-            try seasons = context.fetch(Seasons.fetchRequest())
-        } catch  {
-            print("Error while catching from CoreData")
-        }
         //fill array clothes with all the Clothes in core data
         var clothes: [Clothes]=[]
         do {
@@ -82,22 +78,10 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
             print("Error while catching from CoreData")
         }
         
-        //Fill Array with Seasons
-        for season in seasons {
-            var numOfElem=0
-            for cloth in clothes {
-                if (cloth.owner == currentOwner && season.nameOfSeason == cloth.season) {
-                    numOfElem = numOfElem + 1
-                }
-            }
-            objInSec.append(ObjectsInSection(description: season.nameOfSeason, numberOfElements: numOfElem))
-        }
-        objectsArray.append(Objects(sectionName: "Estações", sectionObject: objInSec))
-        objInSec.removeAll()
         
-        /*
-        //Fill Array with Types of Clothes
-        for typeOfCloth in typesOfClothes {
+   
+         //Fill Array with Types of Clothes
+         for typeOfCloth in typesOfClothes {
             var numOfElem=0
             for cloth in clothes {
                 if (cloth.owner == currentOwner && typeOfCloth.nameOfType == cloth.tipo) {
@@ -105,19 +89,15 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
                 }
             }
             objInSec.append(ObjectsInSection(description: typeOfCloth.nameOfType, numberOfElements: numOfElem))
-        }
-        objectsArray.append(Objects(sectionName: "Tipos de Peça", sectionObject: objInSec))
-        */
+         }
+         objectsArray.append(Objects(sectionName: "Tipos de Peça", sectionObject: objInSec))
         
         objInSec.removeAll()
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("StandardTableViewCell", owner: self, options: nil)?.first as! StandardTableViewCell
-        
-        //let returnText: String = objectsArray[indexPath.section].sectionObject[indexPath.row].description+"- "+String(objectsArray[indexPath.section].sectionObject[indexPath.row].numberOfElements)+" Peças"
-        //cell?.textLabel?.text = returnText
         
         cell.titleCell.text = objectsArray[indexPath.section].sectionObject[indexPath.row].description
         cell.subtitle1Cell.text = String(objectsArray[indexPath.section].sectionObject[indexPath.row].numberOfElements)
@@ -140,12 +120,12 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showClothesOfOwner", sender: tableView.cellForRow(at: indexPath))
+        self.performSegue(withIdentifier: "showClothesOfOwnerBySeason", sender: tableView.cellForRow(at: indexPath))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showClothesOfOwner"){
-            let controller : ViewClothesOfSeason = segue.destination as! ViewClothesOfSeason
+        if (segue.identifier == "showClothesOfOwnerBySeason"){
+            let controller : ViewClothesOfOwner = segue.destination as! ViewClothesOfOwner
             let indexPath : NSIndexPath = self.tableView.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
             
             controller.owner=""
@@ -153,19 +133,23 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
             controller.typeOfCloth=""
             controller.sectionName=""
             
-            controller.owner=items[0].ownerName!
-            if objectsArray[indexPath.section].sectionName == "Estações" {
-                controller.season=objectsArray[indexPath.section].sectionObject[indexPath.row].description
-            }
-            else{
-                if objectsArray[indexPath.section].sectionName == "Tipos de Peça" {
-                    controller.typeOfCloth=objectsArray[indexPath.section].sectionObject[indexPath.row].description
-                }
-            }
+            controller.owner=owner
+            controller.season = season
+  
+            controller.typeOfCloth=objectsArray[indexPath.section].sectionObject[indexPath.row].description   
             controller.sectionName=objectsArray[indexPath.section].sectionName
+            
+        }
+        if (segue.identifier == "showCreateItemInSeason"){
+            let controller : AddItemViewController = segue.destination as! AddItemViewController
+            
+            controller.transOwner = owner
+            controller.transSeason = season
+            controller.transType = ""
+            
             
         }
     }
 
-
+    
 }

@@ -15,6 +15,7 @@ class ViewClothesOfOwner: UIViewController, UITableViewDataSource, UITableViewDe
     var owner: String = ""
     var season: String = ""
     var typeOfCloth: String = ""
+    var sectionName: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var titleNavItem: UINavigationItem!
@@ -203,6 +204,10 @@ class ViewClothesOfOwner: UIViewController, UITableViewDataSource, UITableViewDe
         } catch  {
             print("Error while catching from CoreData")
         }
+        
+        
+        //if sectionName = Estações we need to separate this by type of clothes
+        
         
     }
     

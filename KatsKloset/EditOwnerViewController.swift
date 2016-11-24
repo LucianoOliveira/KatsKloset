@@ -167,6 +167,21 @@ class EditOwnerViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     @IBAction func btnCameraPressed(_ sender: Any) {
+        if (UIImagePickerController.isSourceTypeAvailable(.camera)) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.delegate = self
+            picker.allowsEditing = false
+            self.present(picker, animated: true, completion: nil)
+        }
+        else{
+            //no camera available display alert
+            let alert = UIAlertController(title: "Erro", message: "Camera não está disponivel", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: {(alertAction) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 
 }
