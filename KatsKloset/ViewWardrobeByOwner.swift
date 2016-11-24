@@ -74,13 +74,7 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         } catch  {
             print("Error while catching from CoreData")
         }
-        //fill array clothes with all the Clothes in core data
-        var typesOfClothes: [TypesOfClothes]=[]
-        do {
-            try typesOfClothes = context.fetch(TypesOfClothes.fetchRequest())
-        } catch  {
-            print("Error while catching from CoreData")
-        }
+
         
         //Fill Array with Seasons
         for season in seasons {
@@ -95,29 +89,11 @@ class ViewWardrobeByOwner: UIViewController, UITableViewDataSource, UITableViewD
         objectsArray.append(Objects(sectionName: "Estações", sectionObject: objInSec))
         objInSec.removeAll()
         
-        /*
-        //Fill Array with Types of Clothes
-        for typeOfCloth in typesOfClothes {
-            var numOfElem=0
-            for cloth in clothes {
-                if (cloth.owner == currentOwner && typeOfCloth.nameOfType == cloth.tipo) {
-                    numOfElem = numOfElem + 1
-                }
-            }
-            objInSec.append(ObjectsInSection(description: typeOfCloth.nameOfType, numberOfElements: numOfElem))
-        }
-        objectsArray.append(Objects(sectionName: "Tipos de Peça", sectionObject: objInSec))
-        */
-        
-        objInSec.removeAll()
 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("StandardTableViewCell", owner: self, options: nil)?.first as! StandardTableViewCell
-        
-        //let returnText: String = objectsArray[indexPath.section].sectionObject[indexPath.row].description+"- "+String(objectsArray[indexPath.section].sectionObject[indexPath.row].numberOfElements)+" Peças"
-        //cell?.textLabel?.text = returnText
         
         cell.titleCell.text = objectsArray[indexPath.section].sectionObject[indexPath.row].description
         cell.subtitle1Cell.text = String(objectsArray[indexPath.section].sectionObject[indexPath.row].numberOfElements)
