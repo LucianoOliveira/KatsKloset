@@ -30,6 +30,8 @@ class AddOwnerViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        ownerImage.layer.cornerRadius = ownerImage.frame.size.width/2
+        ownerImage.clipsToBounds = true
         if (self.ownerPhotoFullURL==nil) {
             ownerImage.image = #imageLiteral(resourceName: "no_image_available_10")
         }
@@ -133,4 +135,6 @@ class AddOwnerViewController: UIViewController, UIImagePickerControllerDelegate,
         navigationController!.popViewController(animated: true)
     }
 
+    @IBAction func btnCameraPressed(_ sender: Any) {
+    }
 }

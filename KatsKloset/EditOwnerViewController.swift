@@ -27,6 +27,9 @@ class EditOwnerViewController: UIViewController, UIImagePickerControllerDelegate
         self.ownerPhotoFullURL=nil
         
         
+        showImage.layer.cornerRadius = showImage.frame.size.width/2
+        showImage.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
         nameText.text = items[0].ownerName
         ageText.text = String(items[0].ownerAge)
@@ -162,6 +165,8 @@ class EditOwnerViewController: UIViewController, UIImagePickerControllerDelegate
         
         return newImage
         
+    }
+    @IBAction func btnCameraPressed(_ sender: Any) {
     }
 
 }

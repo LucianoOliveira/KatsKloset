@@ -87,6 +87,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        showImage.layer.cornerRadius = showImage.frame.size.width/2
+        showImage.clipsToBounds = true
     }
 
    
@@ -267,6 +269,8 @@ class EditViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         
     }
 
+    @IBAction func btnCameraPressed(_ sender: Any) {
+    }
 
     
 }

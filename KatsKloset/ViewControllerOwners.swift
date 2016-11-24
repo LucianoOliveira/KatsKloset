@@ -47,6 +47,8 @@ class ViewControllerOwners: UIViewController, UITableViewDataSource, UITableView
         cell.titleCell.text = item.ownerName
         cell.subtitle1Cell.text = String(item.ownerAge)
         cell.subtitle2Cell.text = item.ownerSex
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width/2
+        cell.imageCell.clipsToBounds = true
         if item.ownerPhotoFullURL == nil {
             cell.imageCell.image = #imageLiteral(resourceName: "no_image_available_10")
         }

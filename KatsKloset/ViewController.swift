@@ -46,6 +46,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.titleCell.text = item.desc
         cell.subtitle1Cell.text = item.color
         cell.subtitle2Cell.text = item.owner
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width/2
+        cell.imageCell.clipsToBounds = true
         if item.photoFullURL == nil {
             cell.imageCell.image = #imageLiteral(resourceName: "no_image_available_10")
         }

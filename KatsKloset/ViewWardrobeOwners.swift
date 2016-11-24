@@ -74,8 +74,11 @@ class ViewWardrobeOwners: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         cell.subtitle2Cell.text = ""
+        cell.imageCell.layer.cornerRadius = cell.imageCell.frame.size.width/2
+        cell.imageCell.clipsToBounds = true
         if item.ownerPhotoFullURL == nil {
             cell.imageCell.image = #imageLiteral(resourceName: "no_image_available_10")
+            
         }
         else{
             let paths: NSArray = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray

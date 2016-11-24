@@ -16,4 +16,6 @@ class StandardTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitle2Cell: UILabel!
     
     
+    
+    
 }
